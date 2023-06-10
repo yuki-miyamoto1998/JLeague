@@ -16,4 +16,8 @@ export class Team {
   get category(): 1 | 2 | 3 {
     return this._category;
   }
+
+  static createFromObject(obj: any): Team {
+    return new Team(obj._id, obj._name, obj._category)
+  }
 }
