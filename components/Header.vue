@@ -4,7 +4,7 @@
       <nav class="nav-container">
         <ul class="nav-list">
           <li v-for="item in sortedItems" :key="item.text" class="nav-item">
-            <a :href="item.link" class="nav-link">{{ item.text }}</a>
+            <nuxt-link :to="item.link" class="nav-link">{{ item.text }}</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -20,9 +20,9 @@ interface NavItem {
 }
 
 const items: NavItem[] = [
-  {text: 'FC東京', link: '/'},
-  {text: 'コンサドーレ札幌', link: '/sapporo'},
-  {text: 'サガン鳥栖', link: '/tosu'},
+  {text: 'FC東京', link: '/team/fctokyo'},
+  {text: 'コンサドーレ札幌', link: '/team/sapporo'},
+  {text: 'サガン鳥栖', link: '/team/tosu'},
 ];
 const sortedItems = items.sort((a, b) => a.text.localeCompare(b.text));
 //const jsonData = require('../static/JLeague.json')
